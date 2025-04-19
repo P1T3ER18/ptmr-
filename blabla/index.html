@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Feliz Cumpleaños Adriana!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #4a1c40;
+    }
+
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #d6249f;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      color: #6a1b9a;
+    }
+
+    .image-container {
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      display: none;
+    }
+
+    .image-container img.active {
+      display: block;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #444;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #e055a1;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #6a1b9a;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 ¡Feliz Cumpleaños Adriana! 🎂</h1>
+    <h2>19 de abril</h2>
+
+    <div class="image-container">
+      <img id="img0" class="active" src="img/20171225_013312.jpg" alt="Imagen 0">
+      <img id="img1" src="img/Captura de pantalla 2025-04-19 004948.png" alt="Imagen 1">
+      <img id="img2" src="img/IMG_20170710_164748.jpg" alt="Imagen 2">
+      <img id="img3" src="img/IMG_20210411_215122.jpg" alt="Imagen 3">
+    </div>
+
+    <button onclick="mostrarImagenAleatoria()">Ver otra imagen 🎁</button>
+
+    <p class="message">
+      Hoy celebramos la vida de una persona maravillosa: <strong>Adriana Paola Navarro Salvatierra</strong>. 
+      Que este nuevo año esté lleno de amor, alegría, salud y muchos momentos inolvidables, la cara de papita favorita 💖<br>
+      ¡Disfruta tu día al máximo negrita bella casi tanto como yo!
+    </p>
+  </div>
+
+  <footer>
+    Con cariño, tu hermano Piter 💙
+  </footer>
+
+  <script>
+    function mostrarImagenAleatoria() {
+      const total = 4;
+      const randomIndex = Math.floor(Math.random() * total);
+      for (let i = 0; i < total; i++) {
+        const img = document.getElementById("img" + i);
+        img.classList.remove("active");
+      }
+      document.getElementById("img" + randomIndex).classList.add("active");
+    }
+  </script>
+</body>
+</html>
